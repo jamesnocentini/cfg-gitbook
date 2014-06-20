@@ -1,0 +1,11 @@
+{
+  "name": "Code First: Girls Workshop",
+  "version": "0.1.1",
+  "description": "A clone of Yo App built by Code First: Girls",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jamiltz/cfg-gitbook"
+  },
+  "author": "James Nocentini <james.nocentini@gmail.com>, Yacine Rezgui <yrezgui@gmail.com>",
+  "license": "copyright 2014"
+}
