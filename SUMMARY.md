@@ -1,4 +1,4 @@
 # Summary
 
-* [Test](test/README)
+* [Getting ready](test/README.md)
 
