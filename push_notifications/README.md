@@ -23,7 +23,7 @@ $ cordova plugin add https://github.com/phonegap-build/PushPlugin
 
 Locate the **PushNotification.js** file that was installed into your **plugins** folder and copy it in the **www** folder.
 
-Move `PushNotification.js` located at `plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js` in your `www/js` folder:
+Copy `PushNotification.js` located at `plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js` in your `www/js` folder:
 
 Reference it in your `index.html` file:
 
@@ -34,7 +34,7 @@ Reference it in your `index.html` file:
 
  You can read more about the **GCM** service [here](http://developer.android.com/google/gcm/index.html).
 
- First we need to get a **GCM Project ID** and a corresponding **GCM API Key**. Follow those steps:
+ First we need to get a **GCM Project Number** and a corresponding **GCM API Key**. Follow those steps:
 
  1. Log On the [Google Developer Console](https://console.developers.google.com)
  2. Create a new **Project**

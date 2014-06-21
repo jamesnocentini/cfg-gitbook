@@ -4,21 +4,21 @@
 
 AngularJS 1.2.9:
 
-```https://code.angularjs.org/1.2.9/angular.js```
+`https://code.angularjs.org/1.2.9/angular.js`
 
 **Challenge:** Add the angularJS library to your ```index.html``` using a ```script``` tag. Reload the page and make sure you have them downloaded in devtools.
 
 ### Overview of angularJS
 
-**Challenge:** Create a ```HeyApp``` module so we can get started building the logic. Then add the directive that will indicate that the entire **html** is an Angular app.
+**Challenge:** Create a ```PsstApp``` module so we can get started building the logic. Then add the directive that will indicate that the entire **html** is an Angular app.
 
-	var app = angular.module(‘messageApp’, []);
+	var app = angular.module(‘PsstApp’, []);
 
 ### AngularJS Controllers
 
 Controllers are where we define our app’s behaviour by defining functions and values. In the HTML, we use the ```ng-controller``` directive to attach the controller to a **DOM** element in the view. We only have access to the controller inside the `div` where we defined `ng-controller`.
 
-**Challenge:** Add a controller named `HomeController` to our `HeyApp` module.
+**Challenge:** Add a controller named `HomeController` to our `PsstApp` module.
 
 **Solution**:
 
@@ -32,10 +32,10 @@ Controllers are where we define our app’s behaviour by defining functions and 
 		…
 	</body>
 
-**Challenge:** Attach a message object to the scope in your controller
+**Challenge:** Attach a friend object to the scope in your controller
 
 ```js
-$scope.contact = {
+$scope.friend = {
     username: 'Monster Munch'
 }
 ```
@@ -44,12 +44,9 @@ $scope.contact = {
 
 ```html
 <body ng-controller=“MessageController“>
-    <h3>
-        {{ message.from }}
-    </h3>
-    <p>
-        {{ message.content }}
-    </p>
+    <div class="line">
+        {{ friend.username }}
+    </div>
 </body>
 ```
 
@@ -57,7 +54,7 @@ $scope.contact = {
 **Challenge:** Change the contact object to an array of contacts like so
 
 ```js
-var messages = [
+var friends = [
     {
     	username: "Bobby"
     },
@@ -70,9 +67,17 @@ var messages = [
 ];
 ```
 
+And update your `html` to get the list in your view:
+
+```html
+<div ng-repeat="friend in friends" ng-click="sendMessage(friend, $index)" class="line">
+    {{ friend }}
+</div>
+```
+
 ### Forms and Models
 
-We're going to create our own form to change the username.
+Now let's add a form to allow the user to register.
 
 First we'll create a new ```user``` object in our ```HomeController```. The user will have a ```username``` property.
 
@@ -93,7 +98,7 @@ We already have the input box. Let's wrap it in a ```form``` tag.
 Now we need to bind the user object in our controller to our view. We can use the ```ng-model``` directive to bind the form element to the property.
 
 ```html
-<form name="updateUser">
+<form name="saveUser">
     <input type="text" ng-model="user.username" name="username" placeholder="Type your name">
 </form>
 ```
@@ -101,27 +106,25 @@ Now we need to bind the user object in our controller to our view. We can use th
 Now we need to add the ability to submit the form to persist this new user on our notification service. The ```ng-submit``` directive allows us to call a function when a form is submitted.
 
 ```html
-<form name="updateUser" ng-submit="createUser(user)">
+<form name="saveUser" ng-submit="sendUser()">
     <input type="text" ng-model="user.username" name="username" placeholder="Type your name">
 </form>
 ```
 
-Next we need to define the ```createUser``` function inside of our controller
+Next we need to define the ```sendUser``` function inside of our controller
 
 ```javascript
-$scope.createUser = function(user) {
+$scope.sendUser = function(user) {
 	console.log('Username is: ' + user.username);
 }
 ```
 
-You notice that when we click the save button the form doesn't get cleared out. So let's do that in the once we know the user object was successfully saved.
+Notice that when we click enter the form doesn't get cleared out. So let's do that.
 
 ```javascript
 $scope.createUser = function(user) {
-	$http.post('/api/users', user)
-    	.then(function(res) {
-        	$scope.user = {};
-        });
+    console.log('Username is: ' + user.username);
+    $scope.user = {};
 };
 ```
 
@@ -131,18 +134,19 @@ Services will enable us to take the data out of our controllers.
 
 We would like to fetch the array of messages from an API. For instance, ```http://api.example.com/messages.json```.
 
-Angular comes with a bunch of built-in services to give your controller extra functionality. Things like:
+Angular comes with a bunch of built-in services to give your controllers extra functionality. Things like:
 
 - Fetching JSON data from a web service with ```$http```
 - Logging messages to the JavaScript console with ```$log```
 - Filtering an array with ```$filter```
 
-All those services begin with a ```$``` sign...because they're built-in services with angular.
+All those services begin with a ```$``` sign...because they are built-in services with angular.
 
-The ```$http``` Service is the one we need to use to get that ```json``` data from our server. We can do that using the http ```GET``` method:
+The ```$http``` Service is the one we need to use to send that ```json``` data to our server. We can do that using the http ```GET``` method:
 
 ```js
-$http({method: 'GET', url: '/messages.json'})
+$http.post('/signup', $scope.user)
+     .
 ```
 
 This method returns a Promise with ```.success()``` and ```.error()```. A promise object allows you to do callbacks on it.
