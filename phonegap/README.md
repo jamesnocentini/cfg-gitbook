@@ -14,7 +14,7 @@ Cordova comes with a **command line interface** to commands such as:
 To install it run:
 
 ```js
-sudo npm install -g cordova-cli
+sudo npm install -g cordova
 ```
 
 #### Starting the CFGMessenger
@@ -22,7 +22,7 @@ sudo npm install -g cordova-cli
 You can create a seed PhoneGap project with the following command.
 
 ```js
-$ cordova create phonegap com.codefirstgirl.com CFGMessenger
+$ cordova create phonegap com.codefirstgirls.phonegap PsstApp
 ```
 
 **Challenge:** Launch the app in Chrome
