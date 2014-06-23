@@ -4,21 +4,31 @@
 
 AngularJS 1.2.9:
 
-`https://code.angularjs.org/1.2.9/angular.js`
+```
+https://code.angularjs.org/1.2.9/angular.js
+```
 
-**Challenge:** Add the angularJS library to your ```index.html``` using a ```script``` tag. Reload the page and make sure you have them downloaded in devtools.
+**Challenge:**
+
+Add the angularJS library to your ```index.html``` using a ```script``` tag. Reload the page and make sure you have them downloaded in devtools.
 
 ### Overview of angularJS
 
-**Challenge:** Create a ```PsstApp``` module so we can get started building the logic. Then add the directive that will indicate that the entire **html** is an Angular app.
+**Challenge:**
 
-	var app = angular.module(‘PsstApp’, []);
+Create a ```HeyApp``` module so we can get started building the logic. Then add the directive that will indicate that the entire **html** is an Angular app.
+
+```
+var app = angular.module(‘messageApp’, []);
+```
 
 ### AngularJS Controllers
 
 Controllers are where we define our app’s behaviour by defining functions and values. In the HTML, we use the ```ng-controller``` directive to attach the controller to a **DOM** element in the view. We only have access to the controller inside the `div` where we defined `ng-controller`.
 
-**Challenge:** Add a controller named `HomeController` to our `PsstApp` module.
+**Challenge:**
+
+Add a controller named `HomeController` to our `HeyApp` module.
 
 **Solution**:
 
@@ -26,13 +36,17 @@ Controllers are where we define our app’s behaviour by defining functions and 
 
 	});
 
-**Challenge:** Add the `HomeController` directive to the `body` tag.
+**Challenge:**
+
+Add the `HomeController` directive to the `body` tag.
 
 	<body ng-controller=“MessageController”>
 		…
 	</body>
 
-**Challenge:** Attach a friend object to the scope in your controller
+**Challenge:**
+
+Attach a message object to the scope in your controller
 
 ```js
 $scope.friend = {
@@ -40,7 +54,9 @@ $scope.friend = {
 }
 ```
 
-**Challenge:** Attach the username to a new **line** component.
+**Challenge:**
+
+Attach the username to a new **line** component.
 
 ```html
 <body ng-controller=“MessageController“>
@@ -51,7 +67,9 @@ $scope.friend = {
 ```
 
 
-**Challenge:** Change the contact object to an array of contacts like so
+**Challenge:**
+
+Change the contact object to an array of contacts like so
 
 ```js
 var friends = [
