@@ -30,7 +30,7 @@ Open devtools and make sure those new files are being fetched from the web serve
 <img width="200" src="http://f.cl.ly/items/1p3j1f2P1z3O2x1f0A18/IMG_0084.PNG">
 </a>
 
-**Challenge:** Create a simple list of 3 random names with the ```ui``` and ```li``` elements.
+**Challenge:** Create a simple list of 3 random names with ```div``` elements.
 
 **Challenge:** From looking at the screenshot of the **Yo** app who can guess want font they used?
 
@@ -55,15 +55,6 @@ You should see this:
 <img width="200" src="http://f.cl.ly/items/2N3j2R0c0a3S3J2W0X2C/Screen%20Shot%202014-06-20%20at%2000.54.04.png">
 </a>
 
-Finally, let's change the default style that browsers apply to ```ul``` elements. In ```styles.css```:
-
-```css
-ul {
-    list-style: none;
-    padding: 0;
-}
-```
-
 ### Styling the lines
 
 Let's add some padding and color to those ```div``` element.
@@ -85,10 +76,10 @@ Check you have something like below:
 
 1. Add a ```2n+1``` pseudo-class with a ```background-color``` of ```#2ECB70```
 2. ```3n+1``` with a ```background-color``` of ```#3699DD```
-3. ```???``` with a ```background-color``` of ```#364860```
-4. ```???``` with a ```background-color``` of ```#16A087```
-5. ```???``` with a ```background-color``` of ```#F2C40F```
-6. ```8n+1``` with a ```background-color``` of ```#297FBA```
+3. ```4n+1``` with a ```background-color``` of ```#364860```
+4. ```5n+1``` with a ```background-color``` of ```#16A087```
+5. ```6n+1``` with a ```background-color``` of ```#F2C40F```
+6. ```7n+1``` with a ```background-color``` of ```#297FBA```
 7. ```8n+1``` with a ```background-color``` of ```#9B58B7```
 
 <a class="img-center">
